@@ -3,7 +3,9 @@ import * as S from "./styles";
 import LArrow from "@/assets/LeftArrow.svg";
 import RArrow from "@/assets/RightArrow.svg";
 import Modal from "../modal";
-import { makeKey, daysOfWeek } from "../../util/makeKey";
+import { makeKey } from "@/util/makeKey";
+import DateCell from "./DateCell";
+import DayOfWeekRow from "./DayOfWeekRow";
 
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -124,39 +126,18 @@ const Calendar = () => {
           />
         </S.ArrowWrap>
       </S.CalendarShiftWrap>
-      <S.DayWrap>
-        {daysOfWeek.map((day, index) => (
-          <S.Day key={index}>{day}</S.Day>
-        ))}
-      </S.DayWrap>
+      <DayOfWeekRow />
       <S.Month>
         {weeks.map((week, weekIndex) => (
           <S.Week key={weekIndex}>
-            {week.map((day, dateIndex) => {
-              const dateString = day.date.toDateString();
-              return (
-                <S.Date
-                  key={dateIndex}
-                  onClick={() => handleDateClick(day)}
-                  $isToday={day.isToday}
-                  $isCurrentMonth={day.isCurrentMonth}
-                >
-                  {day.date.getDate()}
-                  <S.TodoDate>
-                    {schedule[dateString]?.length > 0 && (
-                      <>
-                        <p>*</p>
-                        <p>
-                          {schedule[dateString][0].title.length > 4
-                            ? (schedule[dateString][0].title.slice(0, 4).trimEnd() + "...")
-                            : schedule[dateString][0].title}
-                        </p>
-                      </>
-                    )}
-                  </S.TodoDate>
-                </S.Date>
-              );
-            })}
+            {week.map((day, dateIndex) => (
+              <DateCell
+                key={dateIndex}
+                day={day}
+                schedule={schedule}
+                onClick={handleDateClick}
+              />
+            ))}
           </S.Week>
         ))}
       </S.Month>
