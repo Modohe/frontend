@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo, useCallback } from "react";
 import * as S from "./styles";
 import LArrow from "@/assets/LeftArrow.svg";
 import RArrow from "@/assets/RightArrow.svg";
-import Modal from "../modal";
+import Modal from "../modal/index";
 import { makeKey } from "@/util/makeKey";
 import DateCell from "./DateCell";
 import DayOfWeekRow from "./DayOfWeekRow";
