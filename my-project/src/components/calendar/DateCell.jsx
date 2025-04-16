@@ -25,6 +25,7 @@ const DateCell = ({ day, schedule, onClick }) => {
   );
 };
 
+// props 변경 여부를 비교하여 리렌더링을 최소화하는 함수
 const areEqual = (prevProps, nextProps) => {
   return (
     prevProps.day.date.getTime() === nextProps.day.date.getTime() &&

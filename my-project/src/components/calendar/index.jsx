@@ -34,7 +34,7 @@ const Calendar = () => {
     });
   }, []);
 
-  // 전달된 날짜가 오늘인지 확인하는 함수
+  // 주어진 날짜가 오늘 날짜인지 확인하는 함수
   const isToday = useCallback((date) => {
     const today = new Date();
     return (
@@ -44,7 +44,7 @@ const Calendar = () => {
     );
   }, []);
 
-  // 현재 달을 기준으로 달력의 주차별 날짜 배열을 생성하는 useMemo
+  // 현재 월 기준으로 달력 형태의 주차 배열을 생성하는 useMemo
   const weeks = useMemo(() => {
     const isCurrentMonth = (date) => date.getMonth() === month;
     const firstDay = new Date(year, month, 1);
@@ -68,7 +68,7 @@ const Calendar = () => {
     return generatedWeeks;
   }, [year, month, isToday]);
 
-  // 전달받은 방향(prev/next)에 따라 월을 이동시키는 함수
+  // 전달받은 방향에 따라 현재 월을 한 달 앞으로 또는 뒤로 이동시키는 함수
   const shiftMonth = (direction) => {
     setCurrentDate(
       (prev) =>
@@ -79,7 +79,7 @@ const Calendar = () => {
     );
   };
 
-  // 날짜 클릭 시 해당 날짜로 이동하거나 월을 변경하는 함수
+  // 날짜를 선택하고, 월이 다르면 월을 이동시키는 함수
   const selectDate = useCallback(
     (day) => {
       const { date } = day;
@@ -91,6 +91,7 @@ const Calendar = () => {
     [year, month, currentDate]
   );
 
+  // 날짜 클릭 시 모달을 열고 선택된 날짜 상태를 업데이트하는 함수
   const handleDateClick = useCallback(
     (day) => {
       selectDate(day);
@@ -102,13 +103,6 @@ const Calendar = () => {
 
   return (
     <S.Container>
-      {isModalOpen && selectedDate && (
-        <Modal
-          closeModal={() => setIsModalOpen(false)}
-          date={selectedDate}
-          contents={schedule[selectedDate.toDateString()] || []}
-        />
-      )}
       <S.CalendarShiftWrap>
         <S.CurrentDate>
           {year}년 {month + 1}월
@@ -141,6 +135,13 @@ const Calendar = () => {
           </S.Week>
         ))}
       </S.Month>
+      {isModalOpen && selectedDate && (
+        <Modal
+          closeModal={() => setIsModalOpen(false)}
+          date={selectedDate}
+          contents={schedule[selectedDate.toDateString()] || []}
+        />
+      )}
     </S.Container>
   );
 };
