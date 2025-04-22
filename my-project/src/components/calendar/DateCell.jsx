@@ -17,7 +17,7 @@ const DateCell = ({ day, schedule, onClick }) => {
         {todos.length > 0 && (
           <>
             <p>*</p>
-            <p>{firstTitle.length > 4 ? firstTitle.slice(0, 4).trimEnd() + "..." : firstTitle}</p>
+            <p>{firstTitle.length > 4 ? firstTitle.slice(0, 4).trimEnd() + "⋯" : firstTitle}</p>
           </>
         )}
       </S.TodoDate>
