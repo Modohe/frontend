@@ -21,13 +21,13 @@ const Calendar = () => {
     setSchedule({
       [makeKey(2024, 12, 1)]: [{ title: "12월 프로젝트 킥오프" }],
       [makeKey(2025, 4, 2)]: [
-        { title: "디자인 리뷰" },
-        { title: "개발자 회의" },
-        { title: "코드 리팩토링" },
+        { title: "일정" },
+        { title: "일정 7시 기상" },
+        { title: "일정 8시 기상" },
       ],
       [makeKey(2025, 5, 7)]: [
-        { title: "음 이게 뭐노" },
-        { title: "테스트를 위한 테스트" }
+        { title: "어떤 일정이 있긴 해" },
+        { title: "일정" }
       ],
       [makeKey(2025, 4, 9)]: [{ title: "처음 테스트" }],
       [makeKey(2025, 5, 1)]: [{ title: "근로자의 날 행사" }],
