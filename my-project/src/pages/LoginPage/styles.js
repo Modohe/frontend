@@ -19,4 +19,6 @@ export const LoginModal = styled.div`
 
   display: flex;
   flex-direction: column;
+  padding: 2rem;
+  gap: 1rem;
 `;
