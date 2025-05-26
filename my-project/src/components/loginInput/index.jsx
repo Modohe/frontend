@@ -30,7 +30,7 @@ export default function Input({ type, contents = "" }) {
         </button>
       );
     }
-    if (type === "text") {
+    if (type === "email") {
       return <span>✉️</span>;
     }
     return null;
