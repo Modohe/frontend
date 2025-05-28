@@ -3,22 +3,22 @@ import Input from "@/components/LoginInput";
 
 export default function Login() {
   return (
-    <S.LoginBackground>
-      <S.LoginModal>
-        <S.LoginTopSection>
-          <S.LoginTitleArea>
+    <S.AuthBackground>
+      <S.AuthModal>
+        <S.AuthTopSection>
+          <S.AuthTitleArea>
             <h2>환영합니다</h2>
             <p>계정에 로그인하세요</p>
-          </S.LoginTitleArea>
-        </S.LoginTopSection>
+          </S.AuthTitleArea>
+        </S.AuthTopSection>
 
-        <S.LoginInputSection>
+        <S.AuthInputSection>
           <Input contents="이메일" type="email" />
           <Input contents="비밀번호" type="password" />
-        </S.LoginInputSection>
+        </S.AuthInputSection>
 
-        <S.LoginBottomSection>
-          <S.LoginOptionsRow>
+        <S.AuthBottomSection>
+          <S.AuthOptionsRow>
             <label>
               <input type="checkbox" />
               로그인 상태 유지
@@ -27,17 +27,17 @@ export default function Login() {
               <a href="#">아이디 찾기</a>
               <a href="#">비밀번호 찾기</a>
             </div>
-          </S.LoginOptionsRow>
+          </S.AuthOptionsRow>
 
-          <S.LoginSubmitButton>
+          <S.AuthSubmitButton>
             로그인
-          </S.LoginSubmitButton>
+          </S.AuthSubmitButton>
 
-          <S.LoginSignupPrompt>
-            계정이 없으신가요? <a href="#">회원가입</a>
-          </S.LoginSignupPrompt>
-        </S.LoginBottomSection>
-      </S.LoginModal>
-    </S.LoginBackground>
+          <S.AuthRedirectPrompt>
+            계정이 없으신가요? <a href="signin">회원가입</a>
+          </S.AuthRedirectPrompt>
+        </S.AuthBottomSection>
+      </S.AuthModal>
+    </S.AuthBackground>
   );
 }

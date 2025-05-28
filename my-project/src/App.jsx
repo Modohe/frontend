@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Challenge from "@/pages/ChallengePage/index";
 import GlobalStyle from "@/styles/GlobalStyle";
-import Login from "@/pages/loginPage/index";
+import Login from "@/pages/authForm/loginPage";
 import CalendarPage from "@/pages/CalendarPage/index";
 
 const App = () => {

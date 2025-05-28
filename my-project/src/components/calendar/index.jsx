@@ -108,6 +108,7 @@ const Calendar = () => {
           {year}년 {month + 1}월
         </S.CurrentDate>
         <S.ArrowWrap>
+          <button>추가</button>
           <S.ArrowImg
             src={LArrow}
             alt="전 달 화살표"

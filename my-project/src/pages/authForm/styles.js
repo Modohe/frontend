@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoginBackground = styled.div`
+export const AuthBackground = styled.div`
   width: 100vw;
   height: 100vh;
   padding: 1vh 22vw;
@@ -9,7 +9,7 @@ export const LoginBackground = styled.div`
   align-items: center;
 `;
 
-export const LoginModal = styled.div`
+export const AuthModal = styled.div`
   width: 560px;
   height: 710px;
 
@@ -23,25 +23,25 @@ export const LoginModal = styled.div`
   padding: 80px;
 `;
 
-export const LoginTopSection = styled.div`
+export const AuthTopSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
 `;
 
-export const LoginInputSection = styled.div`
+export const AuthInputSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
 `;
 
-export const LoginBottomSection = styled.div`
+export const AuthBottomSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
 `;
 
-export const LoginTitleArea = styled.div`
+export const AuthTitleArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,7 +58,7 @@ export const LoginTitleArea = styled.div`
   }
 `;
 
-export const LoginOptionsRow = styled.div`
+export const AuthOptionsRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,7 +82,7 @@ export const LoginOptionsRow = styled.div`
   }
 `;
 
-export const LoginSubmitButton = styled.button`
+export const AuthSubmitButton = styled.button`
   margin-top: 1.5rem;
   background-color: #000;
   color: #fff;
@@ -93,7 +93,7 @@ export const LoginSubmitButton = styled.button`
   font-size: 1rem;
 `;
 
-export const LoginSignupPrompt = styled.div`
+export const AuthRedirectPrompt = styled.div`
   margin-top: auto;
   text-align: center;
   font-size: 0.9rem;
