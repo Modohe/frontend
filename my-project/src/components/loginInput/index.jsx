@@ -1,18 +1,19 @@
+import EmailIcon from "@/assets/EmailIcon.svg";
+import PasswordIcon from "@/assets/PasswordIcon.svg";
+import NameIcon from "@/assets/NameIcon.svg";
 import React, { useState } from "react";
 
-export default function Input({ type, contents = "" }) {
-  const [inputV, setInputV] = useState("");
+export default function Input({ type, contents = "", ph = "", value, onChange }) {
   const [inputType, setInputType] = useState(type);
-
-  const inputHandle = (e) => {
-    setInputV(e.target.value);
-  };
 
   const handleShowPswd = () => {
     setInputType((prev) => (prev === "password" ? "text" : "password"));
   };
 
   const renderIcon = () => {
+    if (type === "email") {
+      return <img src={EmailIcon} alt="email icon" style={{ width: "1rem", height: "1rem" }} />;
+    }
     if (type === "password") {
       return (
         <button
@@ -22,16 +23,19 @@ export default function Input({ type, contents = "" }) {
             background: "none",
             border: "none",
             cursor: "pointer",
-            fontSize: "1rem",
             padding: 0,
           }}
         >
-          {inputType === "password" ? "🔒" : "🙈"}
+          <img
+            src={PasswordIcon}
+            alt="password icon"
+            style={{ width: "1rem", height: "1rem" }}
+          />
         </button>
       );
     }
-    if (type === "email") {
-      return <span>✉️</span>;
+    if (type === "name") {
+      return <img src={NameIcon} alt="name icon" style={{ width: "1rem", height: "1rem" }} />;
     }
     return null;
   };
@@ -53,8 +57,9 @@ export default function Input({ type, contents = "" }) {
         {renderIcon()}
         <input
           type={inputType}
-          value={inputV}
-          onChange={inputHandle}
+          value={value}
+          onChange={onChange}
+          placeholder={ph}
           style={{
             border: "none",
             outline: "none",

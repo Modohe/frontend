@@ -4,6 +4,7 @@ import Challenge from "@/pages/ChallengePage/index";
 import GlobalStyle from "@/styles/GlobalStyle";
 import Login from "@/pages/authForm/loginPage";
 import CalendarPage from "@/pages/CalendarPage/index";
+import Sign from "./pages/authForm/signPage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Challenge />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/sign" element={<Sign />} />
           <Route path="/calendar" element={<CalendarPage />} />
         </Routes>
       </Router>
