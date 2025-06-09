@@ -1,10 +1,10 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Challenge from "@/pages/ChallengePage/index";
 import GlobalStyle from "@/styles/GlobalStyle";
+import Header from "@/components/header";
+import Challenge from "@/pages/ChallengePage/index";
 import Login from "@/pages/authForm/loginPage";
+import Sign from "@/pages/authForm/signPage";
 import CalendarPage from "@/pages/CalendarPage/index";
-import Sign from "./pages/authForm/signPage";
 
 const App = () => {
   return (
@@ -12,10 +12,12 @@ const App = () => {
       <GlobalStyle />
       <Router>
         <Routes>
-          <Route path="/" element={<Challenge />} />
+          <Route element={<Header />}>
+            <Route path="/calendar" element={<CalendarPage />} />
+            <Route path="/" element={<Challenge />} />
+          </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/sign" element={<Sign />} />
-          <Route path="/calendar" element={<CalendarPage />} />
         </Routes>
       </Router>
     </>
