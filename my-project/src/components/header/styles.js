@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const HeaderWrapper = styled.header`
   position: fixed;
@@ -64,7 +64,7 @@ export const ProfileMenu = styled.div`
   background: white;
   border: 1px solid #ddd;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   z-index: 1001;
@@ -89,5 +89,11 @@ export const ProfileMenu = styled.div`
   button img {
     width: 1rem;
     height: 1rem;
+  }
+`;
+
+export const GlobalPaddingFix = createGlobalStyle`
+  ${HeaderWrapper} + * {
+    padding-top: 100px;
   }
 `;

@@ -7,6 +7,7 @@ import ToggleDownIcon from "@/assets/ToggleDown.svg";
 import ToggleUpIcon from "@/assets/ToggleUp.svg";
 import MySpaceIcon from "@/assets/MySpaceIcon.svg";
 import LogoutIcon from "@/assets/LogoutIcon.svg";
+import { GlobalPaddingFix } from "./styles";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,6 +23,7 @@ const Header = () => {
 
   return (
     <>
+      <GlobalPaddingFix />
       <S.HeaderWrapper>
         <S.LeftSection>
           <S.LogoIcon onClick={handleLogoClick}>
@@ -29,7 +31,7 @@ const Header = () => {
           </S.LogoIcon>
         </S.LeftSection>
         <S.CenterSection>
-          <S.NavLink href="#">캘린더</S.NavLink>
+          <S.NavLink href="/calendar">캘린더</S.NavLink>
           <S.NavLink href="#">AI분석</S.NavLink>
           <S.NavLink href="#">랭킹</S.NavLink>
         </S.CenterSection>

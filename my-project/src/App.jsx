@@ -5,6 +5,7 @@ import Challenge from "@/pages/ChallengePage/index";
 import Login from "@/pages/authForm/loginPage";
 import Sign from "@/pages/authForm/signPage";
 import CalendarPage from "@/pages/CalendarPage/index";
+import HomePage from "./pages/HomePage";
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
         <Routes>
           <Route element={<Header />}>
             <Route path="/calendar" element={<CalendarPage />} />
-            <Route path="/" element={<Challenge />} />
+            <Route path="/" element={<HomePage />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/sign" element={<Sign />} />
