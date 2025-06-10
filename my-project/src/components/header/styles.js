@@ -40,6 +40,54 @@ export const NavLink = styled.a`
   font-weight: 500;
 `;
 
-export const ProfileIcon = styled.div`
-  font-size: 1.5rem;
+export const ProfileWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+
+  span {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+`;
+
+export const ProfileMenu = styled.div`
+  position: absolute;
+  top: 64px;
+  right: 2rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+
+  button {
+    background: none;
+    border: none;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  button img {
+    width: 1rem;
+    height: 1rem;
+  }
 `;
