@@ -1,10 +1,5 @@
-import React from "react";
 import * as S from "./styles";
-import ChallengeSection, {
-  UserChallengeContent,
-  AIChallengeContent,
-  TodayChallengeContent,
-} from "@/components/routineComponent";
+import GroupImg from "@/assets/Group.svg";
 
 const userChallenges = [
   { id: 1, description: "하루 1시간 코딩하기", progress: 70, participants: 120 },
@@ -25,12 +20,9 @@ const aiChallenges = [
 ];
 
 const todayChallenges = [
-  { id: 1, description: "오늘의 코딩 챌린지", progress: 40, participants: 85 },
-  { id: 2, description: "오늘의 영어 단어", progress: 20, participants: 60 },
-  { id: 3, description: "오늘의 명상 10분", progress: 75, participants: 100 },
-  { id: 4, description: "오늘의 플래너 작성", progress: 50, participants: 70 },
-  { id: 5, description: "오늘의 운동 30분", progress: 60, participants: 90 },
-  { id: 6, description: "오늘의 독서 챌린지", progress: 85, participants: 120 },
+  { id: 1, description: "매일 30분 운동하기", progress: 40, participants: 85 },
+  { id: 2, description: "하루 책 20페이지 읽기", progress: 20, participants: 60 },
+  { id: 3, description: "하루 8잔 물 마시기", progress: 75, participants: 100 },
 ];
 
 const myStats = [
@@ -45,48 +37,64 @@ const HomePage = () => {
 
   return (
     <div>
-      <ChallengeSection title="유저 챌린지" color="#007bff">
+      <S.ChallengeWrapper>
+        <S.SectionTitle>유저 챌린지</S.SectionTitle>
         <S.GridContainer>
           {userChallenges.map(({ id, description, progress, participants }) => (
-            <UserChallengeContent
-              key={id}
-              description={description}
-              progress={progress}
-              participants={participants}
-              onJoin={handleJoin}
-            />
+            <S.ChallengeCard key={id}>
+              <S.ChallengeHeader>{description}</S.ChallengeHeader>
+              <div style={{ padding: "16px", display: "flex", flexDirection: "column", gap: "12px" }}>
+                <S.ChallengeProgressBar percent={progress}>
+                  <div />
+                </S.ChallengeProgressBar>
+                <S.ChallengeParticipants>
+                  <img src={GroupImg} alt="" style={{ marginRight: "2px" }} />
+                  {participants}명이 참여중
+                </S.ChallengeParticipants>
+                <S.ChallengeButton onClick={handleJoin}>참여하기</S.ChallengeButton>
+              </div>
+            </S.ChallengeCard>
           ))}
         </S.GridContainer>
-      </ChallengeSection>
+      </S.ChallengeWrapper>
 
-      <ChallengeSection title="AI 추천 챌린지" color="#28a745">
+      <S.ChallengeWrapper>
+        <S.SectionTitle>AI 추천 챌린지</S.SectionTitle>
         <S.GridContainer>
           {aiChallenges.map(({ id, description, explanation }) => (
-            <AIChallengeContent
-              key={id}
-              description={description}
-              explanation={explanation}
-              onJoin={handleJoin}
-            />
+            <S.ChallengeCard key={id}>
+              <S.ChallengeHeaderGreen>{description}</S.ChallengeHeaderGreen>
+              <div style={{ padding: "16px", display: "flex", flexDirection: "column", gap: "12px" }}>
+                <div style={{ fontSize: "0.9rem", color: "#555" }}>{explanation}</div>
+                <S.ChallengeButton onClick={handleJoin}>참여하기</S.ChallengeButton>
+              </div>
+            </S.ChallengeCard>
           ))}
         </S.GridContainer>
-      </ChallengeSection>
+      </S.ChallengeWrapper>
 
-      <ChallengeSection title="오늘의 챌린지" color="#ffc107">
+      <S.ChallengeWrapper>
+        <S.SectionTitle>오늘의 챌린지</S.SectionTitle>
         <S.GridContainer>
           {todayChallenges.map(({ id, description, progress, participants }) => (
-            <TodayChallengeContent
-              key={id}
-              description={description}
-              progress={progress}
-              onDetail={handleDetail}
-              participants={participants}
-            />
+            <S.ChallengeCard key={id}>
+              <S.ChallengeHeaderYellow>{description}</S.ChallengeHeaderYellow>
+              <div style={{ padding: "16px", display: "flex", flexDirection: "column", gap: "12px", alignItems: "flex-start" }}>
+                <S.ChallengeProgressBar percent={progress} color="#ffc107">
+                  <div />
+                </S.ChallengeProgressBar>
+                <div style={{ display: "flex", justifyContent: "space-between", width: "100%", fontSize: "0.9rem", color: "#555" }}>
+                  <div style={{ fontWeight: "500", cursor: "pointer" }} onClick={handleDetail}>상세보기</div>
+                  <S.ChallengeParticipants>{participants}명 참여중</S.ChallengeParticipants>
+                </div>
+              </div>
+            </S.ChallengeCard>
           ))}
         </S.GridContainer>
-      </ChallengeSection>
+      </S.ChallengeWrapper>
 
-      <ChallengeSection title="나의 챌린지 현황" color="#dc3545">
+      <S.ChallengeWrapper>
+        <S.SectionTitle>나의 챌린지 현황</S.SectionTitle>
         <S.GridContainer>
           {myStats.map(({ id, label, value, color }) => (
             <S.StatBox key={id}>
@@ -95,7 +103,7 @@ const HomePage = () => {
             </S.StatBox>
           ))}
         </S.GridContainer>
-      </ChallengeSection>
+      </S.ChallengeWrapper>
     </div>
   );
 };

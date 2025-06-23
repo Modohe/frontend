@@ -47,24 +47,28 @@ const Calendar = () => {
   // 현재 월 기준으로 달력 형태의 주차 배열을 생성하는 useMemo
   const weeks = useMemo(() => {
     const isCurrentMonth = (date) => date.getMonth() === month;
-    const firstDay = new Date(year, month, 1);
-    const startOfWeek = new Date(year, month, 1 - firstDay.getDay());
-    const endOfWeek = new Date(year, month + 1, 0);
-    endOfWeek.setDate(endOfWeek.getDate() + (6 - endOfWeek.getDay()));
+    const firstDayOfMonth = new Date(year, month, 1);
 
-    const generatedWeeks = [];
-    for (
-      let day = new Date(startOfWeek);
-      day <= endOfWeek;
-      day.setDate(day.getDate() + 1)
-    ) {
-      if (!generatedWeeks.length || day.getDay() === 0) generatedWeeks.push([]);
-      generatedWeeks[generatedWeeks.length - 1].push({
-        date: new Date(day),
+    // 1일이 속한 주의 일요일을 시작일로 설정
+    const startOfWeek = new Date(firstDayOfMonth);
+    startOfWeek.setDate(firstDayOfMonth.getDate() - firstDayOfMonth.getDay());
+
+    const days = [];
+    for (let i = 0; i < 42; i++) {
+      const day = new Date(startOfWeek);
+      day.setDate(startOfWeek.getDate() + i);
+      days.push({
+        date: day,
         isToday: isToday(day),
         isCurrentMonth: isCurrentMonth(day),
       });
     }
+
+    const generatedWeeks = [];
+    for (let i = 0; i < 6; i++) {
+      generatedWeeks.push(days.slice(i * 7, i * 7 + 7));
+    }
+
     return generatedWeeks;
   }, [year, month, isToday]);
 
@@ -108,7 +112,21 @@ const Calendar = () => {
           {year}년 {month + 1}월
         </S.CurrentDate>
         <S.ArrowWrap>
-          <button>추가</button>
+          <button
+            onClick={() => setCurrentDate(new Date())}
+            style={{
+              backgroundColor: "black",
+              color: "white",
+              border: "none",
+              padding: "8px 16px",
+              borderRadius: "4px",
+              cursor: "pointer",
+              userSelect: "none"
+            }}
+            type="button"
+          >
+            오늘
+          </button>
           <S.ArrowImg
             src={LArrow}
             alt="전 달 화살표"

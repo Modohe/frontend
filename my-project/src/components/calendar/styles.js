@@ -42,12 +42,27 @@ export const Day = styled(CommonBox)``;
 export const Date = styled(CommonBox)`
   color: ${(props) =>
     !props.$isCurrentMonth ? "#B4B4B4" : props.$isToday ? "red" : "#000000"};
-  border-radius: 12px;
   cursor: pointer;
   align-content: space-around;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
 
   &:hover {
     outline: 1px solid red;
+  }
+`;
+
+export const Week = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &:first-child > div {
+    border-top: 1px solid #e0e0e0;
+  }
+
+  & > div:first-child {
+    border-left: 1px solid #e0e0e0;
   }
 `;
 
@@ -69,11 +84,6 @@ export const Month = styled.div`
   align-content: space-between;
 `;
 
-export const Week = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
 
 export const CurrentDate = styled.p`
   font-family: Roboto;
