@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
+    background-color: #F3F4F6;
     color: #333;
     line-height: 1.6;
     position: flex;
