@@ -12,7 +12,7 @@ const DateCell = ({ day, schedule, onClick }) => {
       $isToday={day.isToday}
       $isCurrentMonth={day.isCurrentMonth}
     >
-      {day.date.getDate()}
+      <span>{day.date.getDate()}</span>
       <S.TodoDate>
         {todos.length > 0 && (
           <>

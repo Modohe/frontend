@@ -115,8 +115,8 @@ const Calendar = () => {
           <button
             onClick={() => setCurrentDate(new Date())}
             style={{
-              backgroundColor: "black",
-              color: "white",
+              backgroundColor: "#E0E7FF",
+              color: "#4F46E5",
               border: "none",
               padding: "8px 16px",
               borderRadius: "4px",
@@ -127,16 +127,18 @@ const Calendar = () => {
           >
             오늘
           </button>
-          <S.ArrowImg
-            src={LArrow}
-            alt="전 달 화살표"
-            onClick={() => shiftMonth("prev")}
-          />
-          <S.ArrowImg
-            src={RArrow}
-            alt="다음 달 화살표"
-            onClick={() => shiftMonth("next")}
-          />
+          <S.ArrowBox onClick={() => shiftMonth("prev")}>
+            <S.ArrowImg
+              src={LArrow}
+              alt="전 달 화살표"
+            />
+          </S.ArrowBox>
+          <S.ArrowBox onClick={() => shiftMonth("next")}>
+            <S.ArrowImg
+              src={RArrow}
+              alt="다음 달 화살표"
+            />
+          </S.ArrowBox>
         </S.ArrowWrap>
       </S.CalendarShiftWrap>
       <DayOfWeekRow />
@@ -149,6 +151,8 @@ const Calendar = () => {
                 day={day}
                 schedule={schedule}
                 onClick={handleDateClick}
+                $isCurrentMonth={day.isCurrentMonth}
+                $isToday={day.isToday}
               />
             ))}
           </S.Week>

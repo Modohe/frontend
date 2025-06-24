@@ -6,7 +6,7 @@ const DayOfWeekRow = () => {
   return (
     <S.DayWrap>
       {daysOfWeek.map((day, index) => (
-        <S.Day key={index}>{day}</S.Day>
+        <S.ColoredDay key={index} day={day}>{day}</S.ColoredDay>
       ))}
     </S.DayWrap>
   );
