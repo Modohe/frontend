@@ -7,8 +7,9 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 24px;
   border-radius: 16px;
-  box-shadow: 0px 16px 20px -12px rgba(0, 0, 0, 0.1),
-    0px 40px 50px -10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 `;
 
 export const CalendarShiftWrap = styled.div`
@@ -59,6 +60,7 @@ export const Date = styled(CommonBox)`
   align-content: space-around;
   border-right: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
 
   &:hover {
     background-color: #f2f2f2;
