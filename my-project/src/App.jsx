@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import GlobalStyle from "@/styles/GlobalStyle";
 import Header from "@/components/header";
-import Challenge from "@/pages/ChallengePage/index";
 import Login from "@/pages/authForm/loginPage";
 import Sign from "@/pages/authForm/signPage";
 import CalendarPage from "@/pages/CalendarPage/index";
 import HomePage from "./pages/HomePage";
+import RankingPage from "./pages/RankingPage";
 
 const App = () => {
   return (
@@ -16,6 +16,7 @@ const App = () => {
           <Route element={<Header />}>
             <Route path="/calendar" element={<CalendarPage />} />
             <Route path="/" element={<HomePage />} />
+            <Route path="/ranking" element={<RankingPage />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/sign" element={<Sign />} />
