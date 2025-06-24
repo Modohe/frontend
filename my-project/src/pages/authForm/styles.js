@@ -21,6 +21,7 @@ export const AuthModal = styled.div`
   flex-direction: column;
   justify-content: space-around;
   padding: 80px;
+  background-color: #ffffff;
 `;
 
 export const AuthTopSection = styled.div`
