@@ -78,7 +78,7 @@ export default function RankingPage() {
             <S.RankingNumber>{person.rank}</S.RankingNumber>
             <S.ProfileImage src={ProfileIcon} />
             <S.RankerInfo>
-              <S.NameText>{person.name}</S.NameText>
+              <S.NameText style={{ marginBottom: "8px" }}>{person.name}</S.NameText>
               <S.TotalProgressBarContainer>
                 <S.TotalProgressBar width={`${(person.score / maxScoreRounded) * 100}%`} />
               </S.TotalProgressBarContainer>

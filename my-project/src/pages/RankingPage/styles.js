@@ -16,11 +16,11 @@ export const SubTitle = styled.p`
 `;
 
 export const RankinPageContainer = styled.div`
-  height: 100vw;
   width: 58vw;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding-bottom: 24px;
 `;
 
 const Rankers = styled.div`
