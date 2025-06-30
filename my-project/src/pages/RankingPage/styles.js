@@ -68,8 +68,8 @@ export const ProfileWrapper = styled.div`
 `;
 
 export const ProfileImage = styled.img`
-  width: 90px;
-  height: 90px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   border: 3px solid #ffffff;
   box-sizing: border-box;
@@ -141,4 +141,64 @@ export const ChallengeScore = styled.div`
   margin-top: 4px;
 `;
 
-export const TotalRankers = styled(Rankers)``;
+export const TotalRankers = styled(Rankers)`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+export const TotalProgressBarContainer = styled.div`
+  width: 100%;
+  height: 6px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+`;
+
+export const TotalProgressBar = styled.div`
+  height: 100%;
+  background-color: #6366f1;
+  border-radius: 4px;
+  width: ${(props) => props.width || "0%"};
+`;
+
+export const RankerContainer = styled.div`
+  width: 100%;
+  height: 80px;
+  display: flex;
+  gap: 12px;
+  border-radius: 12px;
+  border: 0.2px solid #9ca3af;
+  align-items: center;
+  padding: 0 16px;
+`;
+
+export const RankingNumber = styled.p`
+  font-weight: bold;
+  color: #4f46e5;
+  width: 32px;
+  text-align: center;
+`;
+
+export const RankerInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+`;
+
+export const RankerStat = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  font-size: 12px;
+  color: #374151;
+`;
+
+export const StatNumber = styled.div`
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 4px;
+  color: #6b7280;
+`;
