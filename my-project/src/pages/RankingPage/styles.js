@@ -9,19 +9,28 @@ export const Title = styled.h1`
 export const SubTitle = styled.p`
   font-size: 18px;
   line-height: 28px;
-  margin: 12px 0;
+  margin: -12px 0px;
+  & > b {
+    line-height: 50px;
+  }
 `;
 
 export const RankinPageContainer = styled.div`
   height: 100vw;
   width: 58vw;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 `;
 
-export const TopRankers = styled.div`
+const Rankers = styled.div`
   width: 100%;
   background-color: #ffffff;
   padding: 24px;
   border-radius: 12px;
+`;
+
+export const TopRankers = styled(Rankers)`
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -131,3 +140,5 @@ export const ChallengeScore = styled.div`
   color: #4b5563;
   margin-top: 4px;
 `;
+
+export const TotalRankers = styled(Rankers)``;

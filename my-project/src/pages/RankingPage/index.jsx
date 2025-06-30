@@ -59,6 +59,11 @@ export default function RankingPage() {
           )
         })}
       </S.TopRankers >
+
+      <S.TotalRankers>
+        <S.SubTitle><b>전체 랭킹</b></S.SubTitle>
+        
+      </S.TotalRankers>
     </S.RankinPageContainer >
   )
 }
