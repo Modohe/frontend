@@ -14,9 +14,9 @@ export default function RankingPage() {
     <S.RankinPageContainer>
       챌린지 랭킹
       <S.TopRankers>
-        <S.TopRanker><TopRankerProfile src={ProfileIcon}></TopRankerProfile></S.TopRanker>
-        <S.TopRanker></S.TopRanker>
-        <S.TopRanker></S.TopRanker>
+        <S.TopRanker><S.TopRankerProfile src={ProfileIcon}></S.TopRankerProfile></S.TopRanker>
+        <S.TopRanker><S.TopRankerProfile src={ProfileIcon}></S.TopRankerProfile></S.TopRanker>
+        <S.TopRanker><S.TopRankerProfile src={ProfileIcon}></S.TopRankerProfile></S.TopRanker>
       </S.TopRankers>
     </S.RankinPageContainer>
   )
