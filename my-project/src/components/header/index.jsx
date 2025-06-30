@@ -32,7 +32,7 @@ const Header = () => {
         </S.LeftSection>
         <S.CenterSection>
           <S.NavLink href="/calendar">캘린더</S.NavLink>
-          <S.NavLink href="#">AI분석</S.NavLink>
+          <S.NavLink href="/aiAnalysis">AI분석</S.NavLink>
           <S.NavLink href="/ranking">랭킹</S.NavLink>
         </S.CenterSection>
         <S.RightSection>
