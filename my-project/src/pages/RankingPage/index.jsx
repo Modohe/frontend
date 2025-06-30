@@ -1,3 +1,4 @@
+import { useState } from "react";
 import * as S from "./styles";
 import ProfileIcon from "@/assets/ProfileIcon.svg";
 import GoldMedal from "@/assets/GoldMedal.svg";
@@ -32,6 +33,9 @@ const getMedalByRank = (rank) => {
 };
 
 export default function RankingPage() {
+  const [visibleCount, setVisibleCount] = useState(10);
+  const handleLoadMore = () => setVisibleCount((prev) => prev + 30);
+
   const maxScore = rankingPeoples[0]?.score || 5000;
   const maxScoreRounded = Math.ceil(maxScore / 100) * 100;
 
@@ -73,7 +77,7 @@ export default function RankingPage() {
 
       <S.TotalRankers>
         <S.SubTitle><b>전체 랭킹</b></S.SubTitle>
-        {rankingPeoples.slice(3).map((person) => (
+        {rankingPeoples.slice(3, visibleCount).map((person) => (
           <S.RankerContainer key={person.rank}>
             <S.RankingNumber>{person.rank}</S.RankingNumber>
             <S.ProfileImage src={ProfileIcon} />
@@ -97,6 +101,11 @@ export default function RankingPage() {
             </S.RankerStat>
           </S.RankerContainer>
         ))}
+        {visibleCount < rankingPeoples.length && (
+          <S.MoreButton onClick={handleLoadMore}>
+            더보기
+          </S.MoreButton>
+        )}
       </S.TotalRankers>
     </S.RankinPageContainer >
   )

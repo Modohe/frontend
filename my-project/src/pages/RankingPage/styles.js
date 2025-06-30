@@ -202,3 +202,14 @@ export const StatNumber = styled.div`
   margin-top: 4px;
   color: #6b7280;
 `;
+
+export const MoreButton = styled.button`
+  margin-top: 12px;
+  align-self: center;
+  padding: 6px 12px;
+  font-size: "14px";
+  border-radius: 4px;
+  background-color: #f3f4f6;
+  border: none;
+  cursor: pointer;
+`;
