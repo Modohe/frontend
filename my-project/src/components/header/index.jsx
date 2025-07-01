@@ -43,7 +43,7 @@ const Header = () => {
           </S.ProfileWrapper>
           {menuOpen && (
             <S.ProfileMenu>
-              <button onClick={() => navigate("/mypage")}>
+              <button onClick={() => navigate("/myPage")}>
                 <img src={MySpaceIcon} alt="" />
                 나의 공간
               </button>
