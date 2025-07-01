@@ -14,6 +14,11 @@ export default function MyPage() {
     <S.MyPageContainer>
       <S.BackButton onClick={() => alert('클릭')}><img src="" alt="" />설정</S.BackButton>
       <S.ActivityMetrics>
+        <S.SectionDescription style={{
+          position: 'absolute',
+          top: '15px',
+          left: '15px',
+        }}>활동 지표</S.SectionDescription>
         <S.MetricsLeft>
           <S.PointTotalLabel>획득 포인트</S.PointTotalLabel>
           <S.PointTotalValue>2,450</S.PointTotalValue>
@@ -59,7 +64,14 @@ export default function MyPage() {
           </S.ProgressCircle>
         </S.MetricsRight>
       </S.ActivityMetrics>
-      
+      <S.BottomSection>
+        <S.ProfileSetting>
+
+        </S.ProfileSetting>
+        <S.MyInterestsSection>
+
+        </S.MyInterestsSection>
+      </S.BottomSection>
     </S.MyPageContainer>
   )
 }

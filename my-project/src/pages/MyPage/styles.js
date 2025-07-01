@@ -20,6 +20,7 @@ export const ActivityMetrics = styled.div`
   border-radius: 12px;
   padding: 24px;
   display: flex;
+  position: relative;
 `;
 
 export const MetricsLeft = styled.div`
@@ -96,4 +97,26 @@ export const ProgressValue = styled.div`
   transform: translate(-50%, -50%);
   font-size: 18px;
   font-weight: bold;
+`;
+
+export const BottomSection = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+`;
+
+export const ProfileSetting = styled.div`
+  position: relative;
+`;
+
+export const MyInterestsSection = styled.div`
+  position: relative;
+`;
+
+export const SectionDescription = styled.h1`
+  color: #1f2937;
+  font-weight: bold;
+  font-size: 15px;
 `;
