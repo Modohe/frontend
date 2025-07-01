@@ -7,6 +7,7 @@ import CalendarPage from "@/pages/CalendarPage/index";
 import HomePage from "./pages/HomePage";
 import RankingPage from "./pages/RankingPage";
 import AiAnalysis from "./pages/AiAnalysis";
+import MyPage from "./pages/MyPage";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/ranking" element={<RankingPage />} />
             <Route path="/aiAnalysis" element={<AiAnalysis />} />
+            <Route path="/myPage" element={<MyPage />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/sign" element={<Sign />} />
