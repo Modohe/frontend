@@ -40,6 +40,16 @@ export default function AiAnalysis() {
           ))}
         </GridContainer>
       </ChallengeWrapper>
+
+      <S.ChallengeStatistics>
+        <SectionTitle>챌린지 통계</SectionTitle>
+        <div style={{ display: "flex", gap: "12px" }}>
+          <S.AiAnalysisInfoBox $color="#000000"><p>달성률</p><b>87%</b></S.AiAnalysisInfoBox>
+          <S.AiAnalysisInfoBox $color="#22C55E"><p>AI 피드백</p><b>지난주보다 30% 늘었어요!</b></S.AiAnalysisInfoBox>
+          <S.AiAnalysisInfoBox $color="#3B82F6"><p>AI 코멘트</p><b>잘하고 있어요!</b></S.AiAnalysisInfoBox>
+          <S.AiAnalysisInfoBox $color="#A855F7"><p>획득 포인트</p><b>2,450</b></S.AiAnalysisInfoBox>
+        </div>
+      </S.ChallengeStatistics>
     </S.AiAnalysisPageContainer>
   )
 }
