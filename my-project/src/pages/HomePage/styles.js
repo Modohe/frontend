@@ -12,6 +12,7 @@ export const SectionTitle = styled.h2`
 `;
 
 export const ChallengeWrapper = styled.div`
+  width: 100%;
   background-color: #ffffff;
   border-radius: 16px;
   padding: 24px 32px;
