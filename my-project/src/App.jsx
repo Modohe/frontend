@@ -4,10 +4,10 @@ import Header from "@/components/header";
 import Login from "@/pages/authForm/loginPage";
 import Sign from "@/pages/authForm/signPage";
 import CalendarPage from "@/pages/CalendarPage/index";
-import HomePage from "./pages/HomePage";
-import RankingPage from "./pages/RankingPage";
-import AiAnalysis from "./pages/AiAnalysis";
-import MyPage from "./pages/MyPage";
+import HomePage from "@/pages/HomePage";
+import RankingPage from "@/pages/RankingPage";
+import AiAnalysis from "@/pages/AiAnalysis";
+import MyPage from "@/pages/MyPage";
 
 const App = () => {
   return (
