@@ -8,6 +8,7 @@ import {
   ChallengeProgressBar,
   ChallengeParticipants,
 } from "../HomePage/styles";
+import GroupImg from '@/assets/Group.svg';
 
 const todayChallenges = [
   { id: 1, description: "매일 30분 운동하기", progress: 40, participants: 85 },
@@ -22,17 +23,17 @@ export default function AiAnalysis() {
   return (
     <S.AiAnalysisPageContainer>
       <ChallengeWrapper>
-        <SectionTitle>참여중인 챌린지</SectionTitle>
+        <SectionTitle>오늘의 챌린지 목록</SectionTitle>
         <GridContainer>
           {todayChallenges.map(({ id, description, progress, participants }) => (
             <ChallengeCard key={id} style={{ width: "100%", height: "110px" }}>
               <ChallengeHeaderYellow>{description}</ChallengeHeaderYellow>
               <div style={{ padding: "16px", display: "flex", flexDirection: "column", gap: "12px", alignItems: "flex-start" }}>
-                <ChallengeProgressBar percent={progress} color="#ffc107">
+                <ChallengeProgressBar percent={progress} color="#ffc107" style={{ marginTop: "4px" }}>
                   <div />
                 </ChallengeProgressBar>
                 <div style={{ display: "flex", justifyContent: "space-between", width: "100%", fontSize: "0.9rem", color: "#555" }}>
-                  <ChallengeParticipants>{participants}명 참여중</ChallengeParticipants>
+                  <ChallengeParticipants><img src={GroupImg} alt="" style={{ marginRight: "4px" }} />{participants}명 참여중</ChallengeParticipants>
                 </div>
               </div>
             </ChallengeCard>
