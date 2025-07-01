@@ -33,3 +33,8 @@ export const AiAnalysisInfoBox = styled.div`
     color: ${(props) => props.$color || "inherit"};
   }
 `;
+
+export const AnalysisChart = styled.div`
+  height: 300px;
+  margin-top: 24px;
+`;
